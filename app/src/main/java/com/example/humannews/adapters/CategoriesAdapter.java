@@ -2,9 +2,12 @@ package com.example.humannews.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -28,15 +31,17 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ca
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-        View contactView = inflater.inflate(R.layout.item_contact, parent, false);
-        return new CategoriesAdapter.CategoryViewHolder(contactView);
+        View itemCategoryView = inflater.inflate(R.layout.item_image_card, parent, false);
+        return new CategoriesAdapter.CategoryViewHolder(itemCategoryView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
         CategoryItem categoryItem = mDataSet.get(position);
-        TextView textView = holder.nameTextView;
+        TextView textView = holder.titleTextView;
+        ImageView imageView = holder.iconImageView;
         textView.setText(categoryItem.getTitle());
+        imageView.setImageResource(categoryItem.getIconDrawable());
         holder.itemView.setOnClickListener(v -> {
             Context context = v.getContext();
             Intent intent = new Intent(context, MainActivity.class);
@@ -51,14 +56,14 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ca
         return mDataSet.size();
     }
 
-    public static class CategoryViewHolder extends RecyclerView.ViewHolder {
+    static class CategoryViewHolder extends RecyclerView.ViewHolder {
+        TextView titleTextView;
+        ImageView iconImageView;
 
-        public TextView nameTextView;
-        public TextView descriptionTextView;
-
-        public CategoryViewHolder(@NonNull View itemView) {
+        CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
-            nameTextView = itemView.findViewById(R.id.contact_name);
+            titleTextView = itemView.findViewById(R.id.title_text_view);
+            iconImageView = itemView.findViewById(R.id.icon_img_view);
         }
     }
 }
