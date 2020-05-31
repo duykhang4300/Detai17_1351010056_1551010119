@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.example.humannews.R;
@@ -18,6 +19,8 @@ public class WebViewActivity extends AppCompatActivity {
         Intent intent = this.getIntent();
         String url = intent.getStringExtra("url");
         WebView myWebView = (WebView) findViewById(R.id.webview);
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
         if (!url.isEmpty()) {
             myWebView.loadUrl(url);
         }
