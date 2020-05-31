@@ -12,9 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.humannews.R;
 import com.example.humannews.activities.MainActivity;
-import com.example.humannews.activities.WebViewActivity;
 import com.example.humannews.models.CategoryItem;
-import com.example.humannews.utils.RssItem;
 
 import java.util.List;
 
