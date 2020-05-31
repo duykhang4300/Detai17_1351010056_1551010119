@@ -1,15 +1,13 @@
 package com.example.humannews.activities;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
 
 import com.example.humannews.R;
 import com.example.humannews.adapters.CategoriesAdapter;
-import com.example.humannews.adapters.ListRssNewsAdapter;
 import com.example.humannews.utils.constants.MockupDataProvider;
 
 public class CategoriesActivity extends AppCompatActivity {

@@ -14,7 +14,7 @@ public class MockupDataProvider {
         categoryItemList.add(new CategoryItem(ECategory.DAILY_NEWS, "Thời sự", "/thoi-su.rss", R.drawable.ic_newspaper));
         categoryItemList.add(new CategoryItem(ECategory.BUSINESS, "Kinh doanh", "/kinh-doanh.rss", R.drawable.ic_growing));
         categoryItemList.add(new CategoryItem(ECategory.STARTUP, "Startup", "/startup.rss", R.drawable.ic_rocket));
-        categoryItemList.add(new CategoryItem(ECategory.ENTERTAINMENT, "Startup", "/giai-tri.rss", R.drawable.ic_lights));
+        categoryItemList.add(new CategoryItem(ECategory.ENTERTAINMENT, "Entertainment", "/giai-tri.rss", R.drawable.ic_lights));
         return categoryItemList;
     }
 }
